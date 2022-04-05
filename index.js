@@ -18,6 +18,9 @@ function getRecipes() {
         // Ajoute un appareil via le champs de recherche avancé
         addAppliances(recipes);
 
+        // Ajoute un ustensile via le champs de recherche avancé
+        addUstensils(recipes);
+
     })       
 };
 
