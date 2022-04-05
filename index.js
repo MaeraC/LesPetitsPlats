@@ -9,6 +9,8 @@ function getRecipes() {
         // Affiche les recettes
         buildRecipes(recipes);
 
+        // Cherche une recette dans la barre de recherche principale
+        searchRecipes(recipes);
     })       
 };
 
