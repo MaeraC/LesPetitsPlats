@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Petits Plats</title>
+    <script src="https://kit.fontawesome.com/0e8c5e07d6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Lato&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <img src="assets/logo.png" alt="Logo des petits plats" class="header__logo">
+        <h1 class="header__title">Les petits plats</h1>
+    </header>
+
+    <section class="search">
+        <div class="search__dishes">
+            <input type="text" placeholder="Rechercher une recette" class="search__dishes__bar"/>
+            <i class="fas fa-search search__dishes__icon"></i>
+        </div>
+
+        <div class="search__tags"></div>
+
+        <div class="search__categories">
+            <div class="search__categories__ingredients widthStyle">
+                <input type="text" placeholder="Ingrédients" class="ingredients"/>
+                <i class="fas fa-chevron-down iconIngredients icon"></i>
+                <i class="fas fa-chevron-up iconCloseIngredients"></i>
+
+                <div class="results-ingredients"></div>
+            </div>
+            <div class="search__categories__appareils">
+                <input type="text" placeholder="Appareils" class="appareils"/>
+                <i class="fas fa-chevron-down iconAppliances icon"></i>
+                <i class="fas fa-chevron-up iconCloseAppliances"></i>
+                <div class="results-appliances"></div>
+            </div>
+            <div class="search__categories__utentils">
+                <input type="text" placeholder="Ustentiles" class="ustentils"/>
+                <i class="fas fa-chevron-down iconUstensils icon"></i>
+                <i class="fas fa-chevron-up iconCloseUstensils"></i>
+                <div class="results-ustensils"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="recipes">
+
+    </section>
+
+    <div class="error"></div>
+
+    <!--
+    <script src="scripts/factory/recipeFactory.js"></script>
+    <script src="scripts/pages/searchRecipes.js"></script>
+    <script src="index.js"></script> -->
+</body>
+</html>
