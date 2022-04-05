@@ -27,6 +27,8 @@ function getRecipes() {
         // Commence la recherche par un tag Appareil
         searchAppliances(recipes);
 
+        // Commence la recherche par un tag Ustensile
+        searchUstensils(recipes);
 
     })       
 };
