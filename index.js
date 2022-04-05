@@ -24,6 +24,10 @@ function getRecipes() {
         // Commence la recherche par un tag Ingrédient
         searchIngredients(recipes);
 
+        // Commence la recherche par un tag Appareil
+        searchAppliances(recipes);
+
+
     })       
 };
 
