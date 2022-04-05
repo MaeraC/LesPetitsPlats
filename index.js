@@ -21,6 +21,9 @@ function getRecipes() {
         // Ajoute un ustensile via le champs de recherche avancé
         addUstensils(recipes);
 
+        // Commence la recherche par un tag Ingrédient
+        searchIngredients(recipes);
+
     })       
 };
 
