@@ -1,8 +1,9 @@
 function recipeFactory(data) {
-    const { name, description, time, ingredients } = data;
+    const { id, name, description, time, ingredients } = data;
 
     function getRecipeCard() {
         const recipeSection                     = document.querySelector(".recipes"); 
+        const recipeLink                        = document.createElement("a");
         const recipeContainer                   = document.createElement("article");
         const recipeImg                         = document.createElement("div");
         const headerContainer                   = document.createElement("div");
@@ -25,6 +26,8 @@ function recipeFactory(data) {
         recipeContainer.style.background        = "#E7E7E7";
         recipeContainer.style.marginBottom      = "50px";
         recipeContainer.classList.add("recipe-container");
+
+        recipeLink.setAttribute("href", `recipe.html?id=${id}`);
 
         recipeImg.style.width                   = "100%";
         recipeImg.style.height                  = "180px";
@@ -98,8 +101,9 @@ function recipeFactory(data) {
         });   
         
         recipeSection.appendChild(recipeContainer);
-        recipeContainer.appendChild(recipeImg);
-        recipeContainer.appendChild(recipeBloc);
+        recipeContainer.appendChild(recipeLink);
+        recipeLink.appendChild(recipeImg);
+        recipeLink.appendChild(recipeBloc);
         recipeBloc.appendChild(headerContainer);
         headerContainer.appendChild(recipeName);
         headerContainer.appendChild(duration);
@@ -109,5 +113,5 @@ function recipeFactory(data) {
         recipeDesc.appendChild(recipeDescription);
     };
 
-    return { name, description, time, ingredients, getRecipeCard}
+    return { id, name, description, time, ingredients, getRecipeCard}
 }

@@ -16,6 +16,8 @@ function severalTags(recipes) {
                     const tags = document.querySelectorAll(".thisTag")
                     const newRecipes = [];
 
+                    console.log(recipes)
+
                     tags.forEach((tag) => {
                         // retrouve les recettes filtres affichees
                         const filteredRecipes = recipes.filter(recipe => {
