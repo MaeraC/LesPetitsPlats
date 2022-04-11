@@ -21,7 +21,6 @@ function recipeFactory(data) {
         recipeSection.style.marginTop           = "50px";
 
         recipeContainer.classList.add("container");
-        recipeContainer.style.width             = "30%";
         recipeContainer.style.borderRadius      = "5px";
         recipeContainer.style.background        = "#E7E7E7";
         recipeContainer.style.marginBottom      = "50px";

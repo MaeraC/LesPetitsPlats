@@ -32,11 +32,14 @@ function searchIngredients(recipes) {
             ingredientNode.textContent          = ingredient;
             ingredientNode.style.cursor         = "pointer";
             resultsIngredients.style.height     = "100px";
-            ingredientNode.classList.add("ingredient");
+            ingredientNode.classList.add("ingredient", "product");
             resultsIngredients.appendChild(ingredientNode); 
 
             ingredientNode.addEventListener("click", () => {
                 searchResults.innerHTML = "";
+                resultsIngredients.style.width = "";
+                searchIngredients.style.width = "";
+                resultsIngredients.style.display = "none";
 
                 // Affiche les recettes correspondant à l'ingrédient choisi
                 recipes.forEach((recipe) => {
@@ -99,7 +102,7 @@ function searchIngredients(recipes) {
             ingredientNode.textContent          = ingredient;
             ingredientNode.style.cursor         = "pointer";
             resultsIngredients.style.height     = "100px";
-            ingredientNode.classList.add("ingredient");
+            ingredientNode.classList.add("ingredient", "product");
             resultsIngredients.appendChild(ingredientNode); 
 
             ingredientNode.addEventListener("click", () => {

@@ -26,12 +26,15 @@ function searchAppliances(recipes) {
             applianceNode.textContent          = appliance;
             applianceNode.style.cursor         = "pointer";
             resultsAppliances.style.height     = "100px";
-            applianceNode.classList.add("appliances");
+            applianceNode.classList.add("appliances", "product");
             applianceNode.style.display = "block";
             resultsAppliances.appendChild(applianceNode); 
 
             applianceNode.addEventListener("click", () => {
                 searchResults.innerHTML = "";
+                resultsAppliances.style.width = "";
+                searchAppliances.style.width = "";
+                resultsAppliances.style.display = "none";
 
                 // Affiche les recettes correspondant à l'appareil choisi
                 recipes.forEach((recipe) => {
@@ -91,12 +94,15 @@ function searchAppliances(recipes) {
             applianceNode.textContent          = appliance;
             applianceNode.style.cursor         = "pointer";
             resultsAppliances.style.height     = "100px";
-            applianceNode.classList.add("appliances");
+            applianceNode.classList.add("appliances", "product");
             applianceNode.style.display = "block";
             resultsAppliances.appendChild(applianceNode); 
 
             applianceNode.addEventListener("click", () => {
                 searchResults.innerHTML = "";
+                resultsAppliances.style.width = "";
+                searchAppliances.style.width = "";
+                resultsAppliances.style.display = "none";
 
                 // Affiche les recettes correspondant à l'appareil choisi
                 recipes.forEach((recipe) => {

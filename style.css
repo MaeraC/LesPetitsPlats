@@ -27,6 +27,9 @@
     font-family: "DM Sans", sans-serif;
     color: #D04F4F;
   }
+  .none {
+    display: none;
+  }
 
   a {
     text-decoration: none;
@@ -241,4 +244,45 @@
     top: 60%;
     left: 38%;
   } 
+
+  article {
+    width: 30%;
+  }
   
+  @media screen and (min-width: 768px) and (max-width: 969px) {
+    .recipes {
+      margin: 0 0px;
+    }
+    article {
+      border: solid 6px red;
+      width: 49%;
+    }
+  }
+
+  @media screen and (min-width: 500px) and (max-width: 767px) {
+    .recipes {
+      margin: 0 0px;
+    }
+    article {
+      border: solid 6px green;
+      width: 49%;
+    }
+
+    header .header__title {
+      font-size: 25px;
+    }
+    .header__logo {
+      width: 30px;
+    }
+    .ingredients, .appareils, .ustentils{
+      width: 140px;
+      height: 40px;
+    }
+    #bloc {
+      display: block;
+    }
+
+    body {
+      margin: 20px;
+    }
+  }

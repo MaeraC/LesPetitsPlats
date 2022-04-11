@@ -1,6 +1,6 @@
-function addAppliances(recipes) {
-    // Ajoute un appareil via le champs de recherche avancé
+// Ajoute un appareil via le champs de recherche avancé
 
+function addAppliances(recipes) {
     const searchDishes                              = document.querySelector(".search__dishes__bar");
     const searchResults                             = document.querySelector(".recipes");
     const resultsAppliances                        = document.querySelector(".results-appliances");
@@ -48,95 +48,144 @@ function addAppliances(recipes) {
             });
 
             // Actualisation du champs de recherche Appareils
-            // Récupère les appareils des recettes filtrées
-            const AppliancesFiltered               = filteredRecipes.map(recipe => `${recipe.appliance}`);
-            
-            // Supprime les doublons restant
-            const removeDuplicateAppliances        = new Set(AppliancesFiltered);
-            const Appliances                       = [...removeDuplicateAppliances];
-            Appliances.sort();
-            resultsAppliances.innerHTML            = "";
-
-            Appliances.forEach((appliance) => {
-                // Affiche la liste des appareils restant dans le bloc
-                const applianceNode                = document.createElement("p");
-                applianceNode.textContent          = appliance;
-                applianceNode.style.cursor         = "pointer";
-                resultsAppliances.style.height     = "100px";
-                applianceNode.classList.add("appliance", "product");
-                resultsAppliances.appendChild(applianceNode); 
+            iconAppliances.addEventListener("click", () => {
+                // Récupère les appareils des recettes filtrées
+                const AppliancesFiltered               = filteredRecipes.map(recipe => `${recipe.appliance}`);
                 
-                // Cherche un appareil dans l'input de recherche avancé
-                searchAppliances.addEventListener("input", (e) => {
-                
-                    const searchedString                    = e.target.value.toLowerCase();
-                    const filteredAppliances               = Appliances.filter(item => item.toLowerCase().includes(searchedString));
+                // Supprime les doublons restant
+                const removeDuplicateAppliances        = new Set(AppliancesFiltered);
+                const Appliances                       = [...removeDuplicateAppliances];
+                Appliances.sort();
+                resultsAppliances.innerHTML            = "";
 
-                    // Affiche le bloc Appareils 
-                    resultsAppliances.style.display        = "flex";
-                    resultsAppliances.innerHTML            = "";
+                Appliances.forEach((appliance) => {
+                    // Affiche la liste des appareils restant dans le bloc
+                    const applianceNode                = document.createElement("p");
+                    applianceNode.textContent          = appliance;
+                    applianceNode.style.cursor         = "pointer";
+                    resultsAppliances.style.height     = "100px";
+                    applianceNode.classList.add("appliance", "product");
+                    resultsAppliances.appendChild(applianceNode); 
+                    
+                    // Cherche un appareil dans l'input de recherche avancé
+                    searchAppliances.addEventListener("input", (e) => {
+                    
+                        const searchedString                    = e.target.value.toLowerCase();
+                        const filteredAppliances               = Appliances.filter(item => item.toLowerCase().includes(searchedString));
 
-                    // Ferme le bloc Appareils
-                    if (searchAppliances.value == "") {
-                        resultsAppliances.style.display    = "none";
-                    };
+                        // Affiche le bloc Appareils 
+                        resultsAppliances.style.display        = "flex";
+                        resultsAppliances.innerHTML            = "";
 
-                    filteredAppliances.forEach((item) => {
-                        // Affiche la liste des appareils dans le bloc 
-                        const appliance                    = document.createElement("p");
-                        appliance.textContent              = item;
-                        appliance.style.cursor             = "pointer";
-                        appliance.classList.add("appliance", "product");
-                        resultsAppliances.appendChild(appliance); 
+                        // Ferme le bloc Appareils
+                        if (searchAppliances.value == "") {
+                            resultsAppliances.style.display    = "none";
+                        };
 
-                        // Sélectionne l'appareil choisi et affiche les recettes correspondantes
-                        appliance.addEventListener("click", () => {
-                            searchResults.innerHTML         = "";
-                            resultsAppliances.style.display = "none";
-                            searchAppliances.style.width = "";
+                        filteredAppliances.forEach((item) => {
+                            // Affiche la liste des appareils dans le bloc 
+                            const appliance                    = document.createElement("p");
+                            appliance.textContent              = item;
+                            appliance.style.cursor             = "pointer";
+                            appliance.classList.add("appliance", "product");
+                            resultsAppliances.appendChild(appliance); 
 
-                            const newRecipes               = filteredRecipes.filter(recipe => `${recipe.appliance}`.toLowerCase().includes(searchedString));
-                            searchResults.innerHTML             = "";
+                            // Sélectionne l'appareil choisi et affiche les recettes correspondantes
+                            appliance.addEventListener("click", () => {
+                                searchResults.innerHTML         = "";
+                                resultsAppliances.style.display = "none";
+                                searchAppliances.style.width = "";
+                                searchAppliances.value = "";
 
-                            // Affiche les recettes correspondantes 
-                            newRecipes.forEach((recipe) => {
+                                const newRecipes               = filteredRecipes.filter(recipe => `${recipe.appliance}`.toLowerCase().includes(searchedString));
+                                searchResults.innerHTML             = "";
+
+                                // Affiche les recettes correspondantes 
+                                newRecipes.forEach((recipe) => {
+                                    const recipeModel               = recipeFactory(recipe);
+                                    recipeModel.getRecipeCard();
+                                });
+
+                                // Création d'un tag au clic de l'appareil choisi
+                                const tagsContainer             = document.querySelector(".search__tags");
+                                const tag                      = document.createElement("div");
+                                const applianceTag             = document.createElement("p");
+                                const closeTag                  = document.createElement("img");
+
+                                tag.classList.add("tag");
+                                applianceTag.textContent       = appliance.textContent;
+                                applianceTag.classList.add("applianceTag", "thisTag");
+                                closeTag.setAttribute("src", "../assets/iconTimes.png")
+                                closeTag.classList.add("closeTag");
+                                closeTag.innerHTML              = '<i class="fas fa-times"></i>';
+
+                                tagsContainer.appendChild(tag); 
+                                tag.appendChild(applianceTag);
+                                tag.appendChild(closeTag);
+
+                                // Le tag disparait lorsqu'on clique dessus 
+                                tag.addEventListener("click", () => {
+                                    tag.style.display          = "none";
+                                    searchResults.innerHTML     = "";
+                                    searchAppliances.value     = "";
+                                    searchDishes.value          = "";
+                                        
+                                    recipes.forEach((recipe) => {
+                                        const recipeModel           = recipeFactory(recipe);
+                                        recipeModel.getRecipeCard();
+                                    })
+                                })
+                            }) 
+                        })
+                    });
+
+                    applianceNode.addEventListener("click", () => {
+                        searchResults.innerHTML = "";
+                        searchAppliances.value = "";
+                        searchAppliances.style.width = "";
+                        resultsAppliances.style.display = "none";
+        
+                        // Affiche les recettes correspondant à l'appareil choisi
+                        filteredRecipes.forEach((recipe) => {
+                            if (recipe.appliance.includes(applianceNode.textContent) == true) {
                                 const recipeModel               = recipeFactory(recipe);
                                 recipeModel.getRecipeCard();
-                            });
-
-                            // Création d'un tag au clic de l'appareil choisi
-                            const tagsContainer             = document.querySelector(".search__tags");
-                            const tag                      = document.createElement("div");
-                            const applianceTag             = document.createElement("p");
-                            const closeTag                  = document.createElement("img");
-
-                            tag.classList.add("tag");
-                            applianceTag.textContent       = appliance.textContent;
-                            applianceTag.classList.add("applianceTag", "thisTag");
-                            closeTag.setAttribute("src", "../assets/iconTimes.png")
-                            closeTag.classList.add("closeTag");
-                            closeTag.innerHTML              = '<i class="fas fa-times"></i>';
-
-                            tagsContainer.appendChild(tag); 
-                            tag.appendChild(applianceTag);
-                            tag.appendChild(closeTag);
-
-                            // Le tag disparait lorsqu'on clique dessus 
-                            tag.addEventListener("click", () => {
-                                tag.style.display          = "none";
-                                searchResults.innerHTML     = "";
-                                searchAppliances.value     = "";
-                                searchDishes.value          = "";
-                                    
-                                recipes.forEach((recipe) => {
-                                    const recipeModel           = recipeFactory(recipe);
-                                    recipeModel.getRecipeCard();
-                                })
+                            }
+                        });
+        
+                        // Création d'un tag au clic de l'appareil choisi
+                        const tagsContainer             = document.querySelector(".search__tags");
+                        const tag                      = document.createElement("div");
+                        const applianceTag             = document.createElement("p");
+                        const closeTag                  = document.createElement("img");
+        
+                        tag.classList.add("tag");
+                        applianceTag.textContent       = applianceNode.textContent;
+                        applianceTag.classList.add("applianceTag", "thisTag");
+                        closeTag.setAttribute("src", "../assets/iconTimes.png")
+                        closeTag.classList.add("closeTag");
+                        closeTag.innerHTML              = '<i class="fas fa-times"></i>';
+        
+                        tagsContainer.appendChild(tag); 
+                        tag.appendChild(applianceTag);
+                        tag.appendChild(closeTag);
+        
+                        // Le tag disparait lorsqu'on clique dessus 
+                        tag.addEventListener("click", () => {
+                            tag.style.display          = "none";
+                            searchResults.innerHTML     = "";
+                            searchAppliances.value     = "";
+                            searchDishes.value          = "";
+                                
+                            recipes.forEach((recipe) => {
+                                const recipeModel           = recipeFactory(recipe);
+                                recipeModel.getRecipeCard();
                             })
-                        }) 
+                        })
                     })
                 })
             })
+            
         }
     })
 }

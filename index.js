@@ -30,7 +30,7 @@ function getRecipes() {
         // Commence la recherche par un tag Ustensile
         searchUstensils(recipes);
 
-        severalTags();
+        severalTags(recipes);
 
     })       
 };

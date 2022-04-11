@@ -15,8 +15,7 @@ fetch("../data/recipes.json")
                 lightboxFactory();
             }
 
-            function lightboxFactory(data) {
-                //const { id, recipe.name, description, time, ingredients } = data;
+            function lightboxFactory() {
     
                 const recipeSection                     = document.querySelector(".recipe-lightbox");
                 const recipeImg                         = document.createElement("img");
@@ -90,8 +89,4 @@ fetch("../data/recipes.json")
                 recipeSection.appendChild(recipeDescription);
             }
         })
-
-        
-        
-        
     }) 

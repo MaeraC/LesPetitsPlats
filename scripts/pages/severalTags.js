@@ -4,6 +4,8 @@ function severalTags(recipes) {
     const icons = document.querySelectorAll(".icon");
     const searchResults = document.querySelector(".recipes");
     const searchInput = document.querySelectorAll(".searchInput");
+    const searchDishes = document.querySelector(".search__dishes__bar");
+    const results = document.querySelectorAll(".results");
 
     icons.forEach((icon) => {
         icon.addEventListener("click", () => {
@@ -12,11 +14,8 @@ function severalTags(recipes) {
             // Récupère tous les ingredients, ustensiles, et appareils  
             products.forEach((product) => {
                 product.addEventListener("click", () => {
-
                     const tags = document.querySelectorAll(".thisTag")
                     const newRecipes = [];
-
-                    console.log(recipes)
 
                     tags.forEach((tag) => {
                         // retrouve les recettes filtres affichees
@@ -26,18 +25,18 @@ function severalTags(recipes) {
                             const Ingredients = recipe.ingredients.filter(item => item.ingredient.includes(tag.textContent)).length;
 
                             if (appliances > 0 || ustensiles || Ingredients) {
-                                return recipe
+                                return recipe;
                             }
                         });
 
                         // Filtre les recettes affichées selon le tag suivant
                         const newFilter = filteredRecipes.filter(recipe => {
-                            const ustensiles = recipe.ustensils.includes(containerTag.children[1].textContent && containerTag.children[2].textContent);
-                            const appliances = recipe.appliance.includes(containerTag.children[1].textContent && containerTag.children[2].textContent);
-                            const Ingredients = recipe.ingredients.filter(item => item.ingredient.includes(containerTag.children[1].textContent && containerTag.children[2].textContent)).length
-
+                            const ustensiles = recipe.ustensils.includes(containerTag.children[0].textContent && containerTag.children[1].textContent);
+                            const appliances = recipe.appliance.includes(containerTag.children[0].textContent && containerTag.children[1].textContent);
+                            const Ingredients = recipe.ingredients.filter(item => item.ingredient.includes(containerTag.children[0].textContent && containerTag.children[1].textContent)).length
+                            
                             if (ustensiles > 0 || appliances || Ingredients) {
-                                return recipe
+                                return recipe;
                             }
                         }); 
 
@@ -63,6 +62,8 @@ function severalTags(recipes) {
         })
     });
 
+    console.log(searchInput)
+
     searchInput.forEach((input) => {
     
         input.addEventListener("input", () => {
@@ -71,7 +72,6 @@ function severalTags(recipes) {
             // Récupère tous les ingredients, ustensiles, et appareils  
             products.forEach((product) => {
                 product.addEventListener("click", () => {
-
                     const tags = document.querySelectorAll(".thisTag")
                     const newRecipes = [];
 
@@ -90,9 +90,9 @@ function severalTags(recipes) {
 
                         // Filtre les recettes affichées selon le tag suivant
                         const newFilter = filteredRecipes.filter(recipe => {
-                            const ustensiles = recipe.ustensils.includes(containerTag.children[1].textContent);
-                            const appliances = recipe.appliance.includes(containerTag.children[1].textContent);
-                            const Ingredients = recipe.ingredients.filter(item => item.ingredient.includes(containerTag.children[1].textContent)).length
+                            const ustensiles = recipe.ustensils.includes(containerTag.children[0].textContent && containerTag.children[1].textContent);
+                            const appliances = recipe.appliance.includes(containerTag.children[0].textContent && containerTag.children[1].textContent);
+                            const Ingredients = recipe.ingredients.filter(item => item.ingredient.includes(containerTag.children[0].textContent && containerTag.children[1].textContent)).length
                            
                             if (ustensiles > 0 || appliances || Ingredients) {
                                 return recipe
@@ -102,7 +102,6 @@ function severalTags(recipes) {
                         newRecipes.push(newFilter); 
                     });  
 
-                    
                     // Beug - Supprime les recettes inutiles 
                     const itemDeleted = newRecipes.splice(1, 1);
 
@@ -120,4 +119,29 @@ function severalTags(recipes) {
             })
         })
     }) 
+
+    searchDishes.addEventListener("click", () => {
+        const searchInputs = document.querySelectorAll(".searchInput");
+        const resultsBloc = document.querySelectorAll(".results");
+        const iconClose = document.querySelectorAll(".iconClose");
+
+        icons.forEach((icon) => {
+            icon.style.display = "block";
+        })
+
+        iconClose.forEach((icon) => {
+            icon.style.display = "none";
+        })
+
+        searchInputs.forEach((input) => {
+            input.style.width = "";
+        })
+
+        resultsBloc.forEach((bloc) => {
+            bloc.style.display = "none";
+        })
+    })
+
+    
 }
+

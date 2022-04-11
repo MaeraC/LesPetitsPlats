@@ -50,5 +50,6 @@ function searchRecipes(recipes) {
             const errorMsg = document.querySelector(".error");
             errorMsg.textContent = "";
         }  
+        
     })
 }

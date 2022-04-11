@@ -32,12 +32,15 @@ function searchUstensils(recipes) {
             ustensileNode.textContent          = ustensile;
             ustensileNode.style.cursor         = "pointer";
             resultsUstensils.style.height     = "100px";
-            ustensileNode.classList.add("ustensil");
+            ustensileNode.classList.add("ustensil", "product");
             ustensileNode.style.display = "block";
             resultsUstensils.appendChild(ustensileNode); 
 
             ustensileNode.addEventListener("click", () => {
                 searchResults.innerHTML = "";
+                resultsUstensils.style.display = "none";
+                resultsUstensils.style.width = "";
+                searchUstensils.style.width = "";
 
                 // Affiche les recettes correspondant à l'ustensile choisi
                 recipes.forEach((recipe) => {
@@ -97,13 +100,15 @@ function searchUstensils(recipes) {
             ustensileNode.textContent          = ustensile;
             ustensileNode.style.cursor         = "pointer";
             resultsUstensils.style.height     = "100px";
-            ustensileNode.classList.add("ustensil");
+            ustensileNode.classList.add("ustensil", "product");
             ustensileNode.style.display = "block";
             resultsUstensils.appendChild(ustensileNode); 
 
             ustensileNode.addEventListener("click", () => {
                 searchResults.innerHTML = "";
                 resultsUstensils.style.display = "none";
+                resultsUstensils.style.width = "";
+                searchUstensils.style.width = "";
 
                 // Affiche les recettes correspondant à l'ustensile choisi
                 recipes.forEach((recipe) => {
