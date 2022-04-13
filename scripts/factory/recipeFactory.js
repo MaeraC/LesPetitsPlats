@@ -14,11 +14,6 @@ function recipeFactory(data) {
         const recipeBloc                        = document.createElement("div");
         const recipeDesc                        = document.createElement("div");
         const recipeDescription                 = document.createElement("p");
-        
-        recipeSection.style.display             = "flex";
-        recipeSection.style.justifyContent      = "space-between";
-        recipeSection.style.flexWrap            = "wrap";
-        recipeSection.style.marginTop           = "50px";
 
         recipeContainer.classList.add("container");
         recipeContainer.style.borderRadius      = "5px";

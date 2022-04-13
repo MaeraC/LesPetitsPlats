@@ -29,7 +29,6 @@ fetch("../data/recipes.json")
 
                 recipeSection.style.fontFamily          = "Lato";
                 recipeSection.style.marginBottom        = "50px";
-                recipeSection.style.margin              = "0 100px"
 
                 recipeImg.style.width                   = "100%";
                 recipeImg.style.height                  = "200px";
@@ -49,9 +48,8 @@ fetch("../data/recipes.json")
                 iconTime.style.width                    = "18px";
                 iconTime.style.marginRight              = "5px";
 
-                recipeIngredients.style.display         = "flex";
                 recipeIngredients.style.margin          = "20px 0";
-                recipeIngredients.style.justifyContent  = "space-between";
+                recipeIngredients.classList.add("recipe-ing");
                 
 
                 Ingredients.forEach((myObject) => {
