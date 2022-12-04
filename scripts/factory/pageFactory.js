@@ -1,4 +1,4 @@
-fetch("../data/recipes.json")
+fetch("https://maerac.github.io/LesPetitsPlats/data/recipes.json")
     .then((res) => res.json())
     .then((data) => {
 
