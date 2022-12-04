@@ -1,11 +1,11 @@
 function recipeFactory(data) {
-    const { id, name, description, time, ingredients } = data;
+    const { id, name, description, time, ingredients, image } = data;
 
     function getRecipeCard() {
         const recipeSection                     = document.querySelector(".recipes"); 
         const recipeLink                        = document.createElement("a");
         const recipeContainer                   = document.createElement("article");
-        const recipeImg                         = document.createElement("div");
+        const recipeImg                         = document.createElement("img");
         const headerContainer                   = document.createElement("div");
         const recipeName                        = document.createElement("h2");
         const duration                          = document.createElement("div");
@@ -29,6 +29,8 @@ function recipeFactory(data) {
         recipeImg.style.borderTopLeftRadius     = "5px";
         recipeImg.style.borderTopRightRadius     = "5px";
         recipeImg.classList.add("recipe-img");
+        recipeImg.setAttribute("src", image);
+        recipeImg.setAttribute("alt", name);
 
         recipeBloc.style.width                  = "100%";
         recipeBloc.style.height                 = "190px";

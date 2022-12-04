@@ -2,6 +2,7 @@
     "recipes": [
         {
             "id": 1,
+            "image": "https://maerac.github.io/LesPetitsPlats/assets/Limonade.jpg",
             "name" : "Limonade de Coco",
             "servings" : 1,
             "ingredients": [
