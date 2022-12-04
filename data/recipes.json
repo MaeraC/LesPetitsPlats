@@ -305,7 +305,7 @@
         },
         {
             "id": 9,
-            "image": "https://maerac.github.io/LesPetitsPlats/assets/mediterrannee.jpg",
+            "image": "https://maerac.github.io/LesPetitsPlats/assets/mediterannee.jpg",
             "name": "Salade Méditerannéene fraiche au chèvre",
             "servings": 4,
             "ingredients":[
@@ -338,7 +338,7 @@
         },
         {
             "id": 10,
-            "image": "https://maerac.github.io/LesPetitsPlats/assets/Tartiflette.jpg",
+            "image": "https://maerac.github.io/LesPetitsPlats/assets/Tartiflette.jpeg",
             "name": "Tartiflette",
             "servings": 4,
             "ingredients":[
@@ -631,7 +631,7 @@
         },
         {
             "id": 18,
-            "image": "https://maerac.github.io/LesPetitsPlats/assets/smoothieananas.jpg",
+            "image": "https://maerac.github.io/LesPetitsPlats/assets/smoothieananas.jpeg",
             "name": "Smoothie ananas et vanille",
             "servings": 5,
             "ingredients": [
@@ -805,7 +805,7 @@
         },
         {
             "id": 23,
-            "image": "https://maerac.github.io/LesPetitsPlats/assets/quiche.jpeg",
+            "image": "https://maerac.github.io/LesPetitsPlats/assets/quiche.jpg",
             "name": "Quiche lorraine",
             "servings": 4,
             "ingredients": [
@@ -846,7 +846,7 @@
         },
         {
             "id": 24,
-            "image": "https://maerac.github.io/LesPetitsPlats/assets/saladepate.jpg",
+            "image": "https://maerac.github.io/LesPetitsPlats/assets/saladepate.jpeg",
             "name": "Salade de pâtes",
             "servings": 4,
             "ingredients": [
@@ -886,7 +886,7 @@
         },
         {
             "id": 25,
-            "image": "https://maerac.github.io/LesPetitsPlats/assets/cookie.jpeg",
+            "image": "https://maerac.github.io/LesPetitsPlats/assets/cookie.jpg",
             "name": "Cookies",
             "servings": 4,
             "ingredients": [
@@ -1265,7 +1265,7 @@
         },
         {
             "id": 36,
-            "image": "https://maerac.github.io/LesPetitsPlats/assets/lasagne.jpg",
+            "image": "https://maerac.github.io/LesPetitsPlats/assets/lasagne.jpeg",
             "name": "Lasagne Courgettes et Chèvre",
             "servings": 2,
             "ingredients": [
@@ -1439,7 +1439,7 @@
         },
         {
             "id": 41,
-            "image": "https://maerac.github.io/LesPetitsPlats/assets/mousse.jpg",
+            "image": "https://maerac.github.io/LesPetitsPlats/assets/mousse.jpeg",
             "name": "Mousse au chocolat",
             "servings": 4,
             "ingredients": [
@@ -1597,7 +1597,7 @@
         },
         {
             "id": 46,
-            "image": "https://maerac.github.io/LesPetitsPlats/assets/far.jpg",
+            "image": "https://maerac.github.io/LesPetitsPlats/assets/far.jpeg",
             "name": "Far breton",
             "servings": 6,
             "ingredients": [
@@ -1638,7 +1638,7 @@
         },
         {
             "id": 47,
-            "image": "https://maerac.github.io/LesPetitsPlats/assets/mousecitron.jpg",
+            "image": "https://maerac.github.io/LesPetitsPlats/assets/mousecitron.jpeg",
             "name": "Mousse au citron",
             "servings": 6,
             "ingredients": [
@@ -1706,7 +1706,7 @@
         },
         {
             "id": 49,
-            "image": "https://maerac.github.io/LesPetitsPlats/assets/smoothie.jpg",
+            "image": "https://maerac.github.io/LesPetitsPlats/assets/smoothie.jpeg",
             "name": "Smoothie tropical",
             "servings": 4,
             "ingredients": [
@@ -1740,7 +1740,7 @@
         },
         {
             "id": 50,
-            "image": "https://maerac.github.io/LesPetitsPlats/assets/fragipane.jpg",
+            "image": "https://maerac.github.io/LesPetitsPlats/assets/fragipane.jpeg",
             "name": "Frangipane",
             "servings": 2,
             "ingredients": [
