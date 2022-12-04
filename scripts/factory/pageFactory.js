@@ -44,7 +44,7 @@ fetch("https://maerac.github.io/LesPetitsPlats/data/recipes.json")
                 recipeTime.textContent                  = recipe.time + " minutes";
                 recipeTime.style.fontSize               = "18px";
 
-                iconTime.setAttribute("src", "../assets/clock.svg");
+                iconTime.setAttribute("src", "https://maerac.github.io/LesPetitsPlats/assets/clock.svg");
                 iconTime.style.width                    = "18px";
                 iconTime.style.marginRight              = "5px";
 

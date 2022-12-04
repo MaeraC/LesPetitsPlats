@@ -21,7 +21,7 @@ function recipeFactory(data) {
         recipeContainer.style.marginBottom      = "50px";
         recipeContainer.classList.add("recipe-container");
 
-        recipeLink.setAttribute("href", `recipe.html?id=${id}`);
+        recipeLink.setAttribute("href", `https://maerac.github.io/LesPetitsPlats/recipe.html?id=${id}`);
 
         recipeImg.style.width                   = "100%";
         recipeImg.style.height                  = "180px";
