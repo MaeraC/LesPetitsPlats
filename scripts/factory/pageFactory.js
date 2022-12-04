@@ -18,7 +18,7 @@ fetch("https://maerac.github.io/LesPetitsPlats/data/recipes.json")
             function lightboxFactory() {
     
                 const recipeSection                     = document.querySelector(".recipe-lightbox");
-                const recipeImg                         = document.createElement("div");
+                const recipeImg                         = document.createElement("img");
                 const recipeName                        = document.createElement("h1");
                 const duration                          = document.createElement("div");
                 const recipeTime                        = document.createElement("p");
