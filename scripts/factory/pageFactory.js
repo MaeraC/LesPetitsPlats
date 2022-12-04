@@ -31,7 +31,7 @@ fetch("https://maerac.github.io/LesPetitsPlats/data/recipes.json")
                 recipeSection.style.marginBottom        = "50px";
 
                 recipeImg.style.width                   = "100%";
-                recipeImg.style.height                  = "200px";
+                recipeImg.style.height                  = "250px";
                 recipeImg.style.objectFit               = "cover";
                 recipeImg.setAttribute("src", recipe.image);
                 recipeImg.setAttribute("alt", recipe.name);
