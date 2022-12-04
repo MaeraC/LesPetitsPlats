@@ -34,8 +34,10 @@ fetch("https://maerac.github.io/LesPetitsPlats/data/recipes.json")
                 recipeImg.style.height                  = "200px";
                 recipeImg.style.background              = "#C7BEBE";
                 recipeImg.setAttribute("src", recipe.image);
-                recipeImg.setAttribute("alt", recipeName);
+                recipeImg.setAttribute("alt", recipe.name);
 
+                console.log(recipe.image);
+                
                 recipeName.textContent                  = recipe.name;
                 recipeName.style.fontSize               = "25px";
                 recipeName.style.textAlign              = "center";
