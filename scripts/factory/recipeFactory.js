@@ -25,9 +25,9 @@ function recipeFactory(data) {
 
         recipeImg.style.width                   = "100%";
         recipeImg.style.height                  = "180px";
-        recipeImg.style.background              = "#C7BEBE";
         recipeImg.style.borderTopLeftRadius     = "5px";
         recipeImg.style.borderTopRightRadius     = "5px";
+        recipeImg.style.objectFit               = "cover";
         recipeImg.classList.add("recipe-img");
         recipeImg.setAttribute("src", image);
         recipeImg.setAttribute("alt", name);
