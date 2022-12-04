@@ -18,7 +18,7 @@ fetch("https://maerac.github.io/LesPetitsPlats/data/recipes.json")
             function lightboxFactory() {
     
                 const recipeSection                     = document.querySelector(".recipe-lightbox");
-                const recipeImg                         = document.createElement("img");
+                const recipeImg                         = document.createElement("div");
                 const recipeName                        = document.createElement("h1");
                 const duration                          = document.createElement("div");
                 const recipeTime                        = document.createElement("p");
@@ -37,7 +37,7 @@ fetch("https://maerac.github.io/LesPetitsPlats/data/recipes.json")
                 recipeImg.setAttribute("alt", recipe.name);
 
                 console.log(recipe.image);
-                
+
                 recipeName.textContent                  = recipe.name;
                 recipeName.style.fontSize               = "25px";
                 recipeName.style.textAlign              = "center";
